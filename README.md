@@ -1,1 +1,1 @@
-# daily-verse
+# daily-chapter
