@@ -1,0 +1,83 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.chapter-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+  background-color: #837c7c; /* grey background color */
+}
+
+.chapter-text {
+  max-width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  font-family: Arial, sans-serif; /* Change font to a commonly used web font */
+    font-size: 14px; /* Set font size to a smaller value */
+
+    color: #333; /* Dark text color */
+    background-color: #9d9999; /* background color */
+    padding: 10px; /* Add padding for better readability */
+
+     /* Set position to relative */
+    /*position: relative;*/
+
+    /* Replace 'scroll-image.png' with the path to your scroll image */
+    /* background-image: url('scroll-image.png');  */
+
+    /* Scale the image to cover the entire container */
+    /* background-size: cover;  */
+
+    /* Prevent the image from repeating */
+    /* background-repeat: no-repeat;  */
+
+    /* Center the image */
+    /* background-position: center;  */
+}
+
+.chapter-text pre {
+  white-space: pre-wrap; /* Preserve whitespace and wrap lines */
+  word-wrap: break-word; /* Break long words to prevent overflow */
+}
+
+/* Add line breaks before each verse number */
+.chapter-text pre span::before {
+  content: '\A'; /* Insert a line break */
+  white-space: pre; /* Preserve the line break */
+}
