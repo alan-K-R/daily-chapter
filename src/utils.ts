@@ -1,12 +1,10 @@
-// import * as fs from 'fs';
+import { SearchResult } from './Types';
+import bibleData from './kjv.json';
+//@ts-ignore
+const verses = bibleData.verses; 
 
 
-// Load Bible data from JSON file
-// const rawData = fs.readFileSync('bible.json');
-// const bibleData: BibleData = JSON.parse(rawData.toString());
-
-
-export async function selectRandomChapter(verses: any) {
+export async function selectRandomChapter() {
 
     // Select a random book
     const randomVerse = verses[Math.floor(Math.random() * verses.length)];
@@ -40,4 +38,26 @@ function groupAndConcatenateVerses(bookNumber: number, verses: any[]): { book_na
         chapter: randomChapter.toString(), 
         concatenatedText 
     };
+}
+
+export async function fetchSearchResult(searchTerm: string): Promise<SearchResult[]> {
+    const searchTermLower = searchTerm.toLowerCase();
+    const wordRegex = new RegExp(`\\b${searchTermLower}\\b`, "i");
+    const sentenceRegex = new RegExp(
+        `\\b${searchTermLower.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`,
+        "i"
+    );
+
+    const searchResults: SearchResult[] = verses.reduce((acc: SearchResult[], book: any) => {
+        const contentLower = book.text.toLowerCase();
+        if (wordRegex.test(contentLower) || sentenceRegex.test(contentLower)) {
+            acc.push({
+                href: book.book_name,
+                content: book.text,
+            });
+        }
+        return acc;
+    }, []);
+
+    return searchResults;
 }

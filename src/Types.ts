@@ -12,3 +12,15 @@ export interface Chapter {
     verses?: Verse[];
     concatenatedText?: string[]
 }
+
+export interface SearchResult {
+    href: string;
+    content: string;
+  }
+
+// ===========EXTERNAL API TYPES=============
+
+export interface Book {
+    name: string;
+    chapters: number;
+  }

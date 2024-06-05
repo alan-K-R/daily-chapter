@@ -37,38 +37,33 @@
   }
 }
 
-.chapter-container {
-  width: 100%;
+.container {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f8f8;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   padding: 20px;
-  box-sizing: border-box;
+}
 
-  background-color: #837c7c; /* grey background color */
+.chapter-container {
+  flex: 1;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .chapter-text {
-  max-width: 100%;
   overflow-x: auto; /* Enable horizontal scrolling if needed */
-  font-family: Arial, sans-serif; /* Change font to a commonly used web font */
-    font-size: 14px; /* Set font size to a smaller value */
+    font-size: 1.1em;
 
-    color: #333; /* Dark text color */
-    background-color: #9d9999; /* background color */
+    color: #333;
+      /* Dark text color */
     padding: 10px; /* Add padding for better readability */
-
-     /* Set position to relative */
-    /*position: relative;*/
-
-    /* Replace 'scroll-image.png' with the path to your scroll image */
-    /* background-image: url('scroll-image.png');  */
-
-    /* Scale the image to cover the entire container */
-    /* background-size: cover;  */
-
-    /* Prevent the image from repeating */
-    /* background-repeat: no-repeat;  */
-
-    /* Center the image */
-    /* background-position: center;  */
+    text-align: justify;
 }
 
 .chapter-text pre {
@@ -80,4 +75,32 @@
 .chapter-text pre span::before {
   content: '\A'; /* Insert a line break */
   white-space: pre; /* Preserve the line break */
+}
+.sidemenu {
+  background-color: #ddd;
+  padding: 20px;
+  flex-basis: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.sidemenu h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.sidemenu input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.sidemenu button {
+  width: calc(100% - 20px);
+  padding: 10px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
